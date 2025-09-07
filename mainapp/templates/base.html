@@ -1,0 +1,143 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Магазин{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <!-- Верхня частина хеадеру  -->
+      <nav class="header__top">
+        <ul class="header__top-menu"></ul>
+      </nav>
+
+      <!-- Середня частина(інпут)  -->
+      <div class="header__middle">
+        <div class="header__middle-left">
+          <button class="header__middle-phone-btn">
+            <i class="fa-solid fa-phone fa-lg"></i>
+          </button>
+
+          <div class="header__middle-language">UA / en</div>
+        </div>
+
+        <div class="header__logo-container">
+          <h2 class="header__logo">LOGO</h2>
+        </div>
+
+        <div class="header__middle-right">
+          <div class="header__middle-search-container">
+            <input type="text" class="header__search" id="input" />
+
+            <button class="header__middle-search-btn" id="searchBtn">
+              <i
+                class="fa-solid fa-magnifying-glass fa-lg"
+                style="color: #2e2e2e"
+              ></i>
+            </button>
+
+            <div id="output"></div>
+          </div>
+
+          <div class="header__middle-icons-container">
+            <button class="header__middle-icons-btn">
+              <i class="fa-regular fa-heart fa-xl" style="color: #333333"></i>
+            </button>
+            <button class="header__middle-icons-btn">
+              <i class="fa-regular fa-user fa-xl" style="color: #333333"></i>
+            </button>
+            <button class="header__middle-icons-btn">
+              <i
+                class="fa-solid fa-bag-shopping fa-xl"
+                style="color: #333333"
+              ></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Нижня частина(категорії) -->
+      <nav class="header__bottom">
+        <ul class="header__bottom-menu"></ul>
+        <div class="category-dropdown">
+          <div class="category-dropdown__left"></div>
+          <div class="category-dropdown__right">
+            <ul class="category-dropdown__right-list"></ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Слайдер -->
+    <section class="slider">
+      <div class="carousel">
+        <button class="carousel__past" data-carousel-button="past">
+          <i class="fa-solid fa-chevron-left fa-2xl"></i>
+        </button>
+        <button class="carousel__next" data-carousel-button="next">
+          <i class="fa-solid fa-chevron-right fa-2xl"></i>
+        </button>
+
+        <ul data-slides></ul>
+      </div>
+    </section>
+
+    <main class="main-container">{% block content %} {% endblock %}</main>
+
+    <!-- Футер -->
+    <footer class="footer">
+      <div class="footer_container">
+        <div class="footer__left">
+          <h1 class="footer__logo">LOGO</h1>
+          <div class="footer__icons">
+            <i class="fa-brands fa-facebook" style="color: #000000"></i>
+            <i class="fa-brands fa-instagram" style="color: #000000"></i>
+            <i class="fa-brands fa-tiktok" style="color: #000000"></i>
+          </div>
+        </div>
+        <div class="footer__right">
+          <div class="footer__catalog">
+            <h4>Каталог</h4>
+            <ul class="footer__categories"></ul>
+          </div>
+          <div class="footer__contacts">
+            <h4>Контакти</h4>
+            <div class="footer__box">
+              <span>Телефон</span>
+              <span> +38 (011) 011 01 01 </span>
+            </div>
+            <div class="footer__box">
+              <span>Email</span>
+              <span> jellys@jellys.ua </span>
+            </div>
+            <div class="footer__box">
+              <span>Адреса</span>
+              <span> Kyiv. white bat street. 25 </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__under">
+        <span>Розробка сайту Golden Web digital</span>
+      </div>
+    </footer>
+
+    {{ categories|json_script:"categories-data" }}
+    {{categories|json_script:"main_slider-data" }}
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>
