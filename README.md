@@ -19,7 +19,7 @@
 
 4. **Запустіть проект**
    ```bash
-   python manage.py runserver
+   python manage.py tailwind dev
    ```
 
 5. **Відкрийте браузер**
