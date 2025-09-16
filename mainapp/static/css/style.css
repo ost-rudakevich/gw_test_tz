@@ -1,31 +1,22 @@
-body {
-  width: 100%;
-  color: #333333;
-  font-family: 'Open Sans';
-  margin: 0;
-  padding: 0;
-  background-color: #ffff;
-}
-
-.main-container {
+/* .main-container {
   display: flex;
   flex-direction: column;
   gap: 50px 0;
-}
+} */
 
-.page-wrapper {
+/* .page-wrapper {
   display: flex;
   flex-direction: column;
   gap: 35px 0;
   padding: 20px 260px;
-}
+} */
 
-.header {
+/* .header {
   display: flex;
   flex-direction: column;
 }
 
-/* Верхня частина хедера */
+
 .header__top {
   display: flex;
   align-items: center;
@@ -44,10 +35,10 @@ body {
 
 .header__top-menu-item {
   cursor: pointer;
-}
+} */
 
 /* Середня частина хедера */
-.header__middle {
+/* .header__middle {
   height: 67px;
   display: flex;
   flex-direction: row;
@@ -55,54 +46,54 @@ body {
   align-items: center;
   border-top: 1px solid #a6a6a6;
   border-bottom: 1px solid #a6a6a6;
-}
+} */
 
-.header__middle-left {
+/* .header__middle-left {
   display: flex;
   align-items: center;
   column-gap: 20px;
   padding-left: 100px;
-}
+} */
 
-.header__middle-phone-btn {
+/* .header__middle-phone-btn {
   transition: transform 0.4s;
   background: none;
   border: none;
   cursor: pointer;
-}
+} */
 
-.header__middle-phone-btn:hover {
+/* .header__middle-phone-btn:hover {
   transform: scale(1.1);
-}
+} */
 
-.header__middle-language {
-}
+/* .header__middle-language {
+} */
 
-.header__logo-container {
+/* .header__logo-container {
   display: flex;
   justify-content: flex-end;
   width: 350px;
-}
+} */
 
-.header__logo {
+/* .header__logo {
   color: #000000;
   cursor: pointer;
-}
+} */
 
 /* Права частина хеадеру */
 
-.header__middle-right {
+/* .header__middle-right {
   display: flex;
   padding-right: 50px;
   gap: 10px;
   position: relative;
-}
+} */
 
-.header__middle-search-container {
+/* .header__middle-search-container {
   display: flex;
-}
+} */
 
-.header__search {
+/* .header__search {
   height: 38px;
   width: 230px;
   background-color: #f4f4f4;
@@ -111,47 +102,47 @@ body {
   font-size: 14px;
   color: #000000;
   padding-left: 7px;
-}
+} */
 
-.header__middle-search-btn {
+/* .header__middle-search-btn {
   border: none;
   background-color: #f4f4f4;
   cursor: pointer;
   padding-right: 10px;
-}
+} */
 
-.header__middle-icons-container {
+/* .header__middle-icons-container {
   display: flex;
   items-align: center;
   gap: 5px;
-}
+} */
 
-.header__middle-icons-btn {
+/* .header__middle-icons-btn {
   border: none;
   background-color: #ffff;
   cursor: pointer;
-}
+} */
 
-/* Нижня частина хедеру */
+Нижня частина хедеру
 
-.header__bottom {
+/* .header__bottom {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 5px 0 10px 0;
   height: 24px;
   position: relative;
-}
+} */
 
-.header__bottom-menu {
+/* .header__bottom-menu {
   display: flex;
   justify-content: center;
   gap: 30px;
   list-style: none;
   margin: 0;
-}
+} */
 
-.header__bottom-menu button {
+/* .header__bottom-menu button {
   border: none;
   cursor: pointer;
   background-color: #ffff;
@@ -160,8 +151,7 @@ body {
   transition: border-bottom 0.3s;
 }
 
-/* ------------------------------------------------------- */
-/* Категорії */
+
 .category-dropdown {
   background-color: #ffff;
   height: 288px;
@@ -195,11 +185,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px 0;
-}
+} */
 
 /* ---------------------------------------------------------- */
 /* результати пошуку товарів */
-.output {
+/* .output {
   position: absolute;
   top: 100%;
   width: 330px;
@@ -233,7 +223,7 @@ body {
 
 .output__list-element:hover {
   background-color: #f0f0f0;
-}
+} */
 
 /* --------------------------------------------------------------------------- */
 /* Продукти */
@@ -387,7 +377,7 @@ body {
 
 /* ----------------------------------------------------------------------- */
 /* Опис */
-.description {
+/* .description {
   display: flex;
   flex-direction: column;
 }
@@ -401,12 +391,12 @@ body {
 .description__text {
   font-size: 14px;
   margin: 2px;
-}
+} */
 
 /* ------------------------------------------------------------------------------------- */
 /* Нижня вітрина */
 
-.bottom-showcase {
+/* .bottom-showcase {
   display: flex;
   flex-direction: column;
   padding: 20px 150px;
@@ -433,13 +423,13 @@ body {
 .bottom-showcase__banner {
   width: 600px;
   height: 500px;
-}
+} */
 
 /* 
 ---------------------------------------------------------------- */
 /* Футер */
 
-.footer {
+/* .footer {
   display: flex;
   flex-direction: column;
 }
@@ -526,11 +516,11 @@ body {
   color: #ffff;
   background-color: #000000;
   font-size: 16px;
-}
+} */
 
 /* --------------------------------------------------------------------------- */
 /* Слайдер */
-.carousel {
+/* .carousel {
   width: 100%;
   height: 623px;
   position: relative;
@@ -591,4 +581,22 @@ body {
   height: 100%;
   width: 100%;
   transition: opacity 0.5s ease-in-out;
+} */
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.9) rotateX(-10deg);
+  }
+  50% {
+    transform: translateY(5px) scale(0.98) rotateX(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0);
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }

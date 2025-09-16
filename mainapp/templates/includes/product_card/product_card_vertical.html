@@ -1,0 +1,59 @@
+<div class="flex flex-col gap-2 cursor-pointer group">
+    <!-- Зображення -->
+    <div class="relative overflow-hidden bg-gray-100 aspect-square">
+        <img
+                src="{{ product.image }}"
+                alt="{{ product.name }}"
+                class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+        />
+    </div>
+
+    <!-- Інформація -->
+    <div class="flex flex-col gap-1.5 p-2">
+        <!-- Назва та сердечко -->
+        <div class="flex justify-between items-start gap-2">
+      <span class="text-sm color-#545454 line-clamp-2">
+        {{ product.name }}
+      </span>
+            <button
+                    class="flex-shrink-0 bg-none border-none p-x-2 cursor-pointer hover:text-red-500 transition-colors"
+                    data-product-id="{{ product.id }}"
+            >
+                <i class="fa-regular fa-heart text-lg"></i>
+            </button>
+        </div>
+
+        <!-- Наявність -->
+        <span class="text-xs text-gray-600">
+      {% if product.available %}В наявності{% else %}Нема в наявності{% endif %}
+    </span>
+
+        <!-- Ціни та рейтинг -->
+        <div class="flex flex-col gap-1">
+            <!-- Ціни -->
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-x-3">
+                    {% if product.price != product.price_without_discount %}
+                    <span class="text-sm text-gray-500 line-through">
+            {{ product.price_without_discount }} UAH
+          </span>
+                    {% endif %}
+                    <span class="text-base text-gray-900"> {{ product.price }} UAH </span>
+                </div>
+
+                <div class="flex items-center gap-1">
+                    <div class="flex text-amber-400">
+                        {% with rating_int=product.rating|floatformat:"0" %}
+                        {% for i in "12345" %}
+                        {% if forloop.counter <= rating_int|add:0 %} ★
+                        {% else %} ☆
+                        {% endif %}
+                        {% endfor %}
+                        {% endwith %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

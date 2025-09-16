@@ -1,0 +1,58 @@
+<div
+        class="flex flex-col items-center justify-center gap-6 lg:flex-row lg:items-center lg:gap-12 xl:gap-16 2xl:gap-20 3xl:gap-24"
+>
+    {% if side == "left" %}
+
+    <div
+            class="flex flex-col gap-6 w-full lg:gap-8 lg:w-auto xl:gap-10 2xl:gap-12"
+    >
+        <div
+                class="flex flex-wrap justify-center gap-4 lg:justify-start lg:gap-6 xl:gap-8 2xl:gap-10"
+        >
+            {% for product in products|slice:":2" %}
+            {% include 'includes/product_card/product_card_vertical.html' %}
+            {% endfor %}
+        </div>
+        <div class="w-full flex justify-center lg:justify-start xl:justify-center">
+            <button
+                    class="w-full max-w-xs h-10 border border-[#54545480] bg-white text-black px-4 py-2 cursor-pointer lg:w-48 lg:text-sm lg:px-3 lg:py-1 xl:w-56 xl:h-12 xl:text-base 2xl:w-64 2xl:h-14 2xl:text-lg"
+            >
+                Переглянути всі знижки
+            </button>
+        </div>
+    </div>
+
+    <img
+            src="{{ banner.image }}"
+            alt="{{ banner.name }}"
+            class="w-full h-[364px] object-cover sm:h-[380px] md:h-[396px] lg:w-[500px] lg:h-[400px] xl:w-[600px] xl:h-[500px] 2xl:w-[700px] 2xl:h-[600px] 3xl:w-[800px] 3xl:h-[700px]"
+    />
+
+    {% else %}
+
+    <img
+            src="{{ banner.image }}"
+            alt="{{ banner.name }}"
+            class="w-full h-[364px] object-cover sm:h-[380px] md:h-[396px] lg:w-[500px] lg:h-[400px] xl:w-[600px] xl:h-[500px] 2xl:w-[700px] 2xl:h-[600px] 3xl:w-[800px] 3xl:h-[700px]"
+    />
+
+    <div
+            class="flex flex-col gap-6 w-full lg:gap-8 lg:w-auto xl:gap-10 2xl:gap-12"
+    >
+        <div
+                class="flex flex-wrap justify-center gap-4 lg:justify-start lg:gap-6 xl:gap-8 2xl:gap-10"
+        >
+            {% for product in products|slice:":2" %}
+            {% include 'includes/product_card/product_card_vertical.html' with product=product %}
+            {% endfor %}
+        </div>
+        <div class="w-full flex justify-center lg:justify-start xl:justify-center">
+            <button
+                    class="w-full max-w-xs h-10 border border-[#54545480] bg-white text-black px-4 py-2 cursor-pointer lg:w-48 lg:text-sm lg:px-3 lg:py-1 xl:w-56 xl:h-12 xl:text-base 2xl:w-64 2xl:h-14 2xl:text-lg"
+            >
+                Переглянути всі знижки
+            </button>
+        </div>
+    </div>
+    {% endif %}
+</div>

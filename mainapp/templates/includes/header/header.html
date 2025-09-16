@@ -1,0 +1,106 @@
+<header class="w-full flex flex-col">
+    <!-- Верхня частина хедера -->
+    <nav class="w-full">
+        <ul
+                id="header-top-menu"
+                class="list-none flex gap-x-2 py-2 sm:pl-5 sm:gap-x-3 md:pl-7 lg:py-3 lg:gap-x-4 xl:py-4 xl:pl-16 2xl:pl-[93px] 2xl:gap-x-6 3xl:pl-20 4xl:pl-28 5xl:pl-32"
+        ></ul>
+    </nav>
+
+    <!-- Середня частина (мобільне меню) -->
+    <div
+            class="flex items-center gap-x-[39%] border-t border-[#a6a6a6] sm:hidden"
+    >
+        {% include 'includes/header/header_element.html' %}
+    </div>
+
+    <!-- Нижня частина (інпут + кнопки) -->
+    <div
+            class="h-[47px] w-full flex items-center justify-between border-t border-b border-[#a6a6a6] lg:h-[67px] sm:px-5 md:px-7 xl:px-16 2xl:px-[93px] 3xl:px-20 4xl:px-28 5xl:px-32"
+    >
+        <div class="w-full flex justify-between">
+            <!-- Ліва частина меню -->
+            <div class="hidden sm:flex sm:justify-between sm:w-[50%]">
+                {% include 'includes/header/header_element.html' %}
+            </div>
+
+            <!-- Права частина (пошук + іконки) -->
+            <div
+                    class="flex justify-between items-center w-full sm:w-[50%] sm:justify-end sm:gap-x-5 md:w-[40%] lg:w-[35%] xl:w-[30%] 2xl:w-[25%] 3xl:w-[20%] 4xl:w-[18%] 5xl:w-[15%]"
+            >
+                <!-- Пошук -->
+                <div class="flex relative">
+                    <input
+                            type="text"
+                            id="input"
+                            class="h-[30px] w-[160px] bg-[#f4f4f4] border-none outline-none text-[14px] text-black pl-[7px] sm:w-[130px] md:w-[160px] lg:w-[200px] lg:h-[38px] xl:w-[240px] 2xl:w-[280px] 3xl:w-[320px] 4xl:w-[360px] 5xl:w-[420px]"
+                    />
+
+                    <button
+                            id="searchBtn"
+                            class="border-none h-[30px] bg-[#f4f4f4] cursor-pointer pr-[10px] lg:h-[38px]"
+                    >
+                        <i
+                                class="fa-solid fa-magnifying-glass fa-lg"
+                                style="color: #2e2e2e"
+                        ></i>
+                    </button>
+
+                    <div
+                            id="output"
+                            class="absolute top-full left-0 w-[280px] max-h-[400px] overflow-y-auto bg-white shadow-lg z-50 p-4 opacity-0 -translate-y-6 scale-75 blur-xl rotate-[-5deg] transition-all duration-700 ease-out hidden sm:left-auto sm:right-0 sm:w-[320px] md:w-[360px] lg:w-[380px] xl:w-[400px] 2xl:w-[420px] 3xl:w-[460px] 4xl:w-[500px] 5xl:w-[540px]"
+                    ></div>
+                </div>
+
+                <!-- Іконки -->
+                <div class="flex items-center gap-[15px]">
+                    <button class="border-none bg-white cursor-pointer">
+                        <i class="fa-regular fa-heart fa-lg" style="color: #333333"></i>
+                    </button>
+                    <button class="border-none bg-white cursor-pointer">
+                        <i class="fa-regular fa-user fa-lg" style="color: #333333"></i>
+                    </button>
+                    <button class="border-none bg-white cursor-pointer">
+                        <i
+                                class="fa-solid fa-bag-shopping fa-lg"
+                                style="color: #333333"
+                        ></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav
+            id="header-bottom"
+            class="flex justify-center items-center relative h-[30px] 4xl:h-[45px] pt-1.5 pb-2 sm:pt-2 sm:pb-3 lg:pt-3 lg:pb-4"
+    >
+        <!-- Меню категорй -->
+        <ul
+                id="header-bottom-menu"
+                class="flex justify-center list-none m-0 gap-3 sm:gap-5 md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12 3xl:gap-14 4xl:gap-16 5xl:gap-20"
+        >
+            {% for category in categories %}
+            {% include 'includes/category/category_item.html' %}
+            {% endfor %}
+        </ul>
+
+        <!-- Дропдаун -->
+        <div
+                id="category-dropdown"
+                class="absolute top-full opacity-0 z-30 border border-[#333] bg-white flex transition-all duration-500 ease-out left-1/2 -translate-x-1/2 w-[90%] max-w-sm h-[220px] sm:max-w-md sm:h-[240px] md:max-w-lg md:h-[260px] lg:max-w-xl lg:h-[280px] xl:max-w-2xl xl:h-[300px] 2xl:max-w-3xl 2xl:h-[320px] 3xl:max-w-4xl 3xl:h-[340px] 4xl:max-w-5xl 4xl:h-[360px] 5xl:max-w-[80rem] 5xl:h-[400px] p-4 sm:p-6 md:p-8 transform -translate-y-5 scale-90"
+        >
+            <div
+                    id="category-dropdown-left"
+                    class="w-[40%] border-r border-[#333]"
+            ></div>
+
+            <div class="w-full pl-4 sm:pl-6 md:pl-8">
+                <ul
+                        id="category-dropdown-right-list"
+                        class="m-0 p-0 list-none font-medium flex flex-col gap-y-4 sm:gap-y-5 md:gap-y-6"
+                ></ul>
+            </div>
+        </div>
+    </nav>
+</header>
