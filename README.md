@@ -15,6 +15,7 @@
 3. **Встановіть залежності**
    ```bash
    pip install -r requirements.txt
+   python manage.py tailwind install
    ```
 
 4. **Запустіть проект**
